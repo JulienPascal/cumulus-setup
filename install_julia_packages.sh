@@ -50,6 +50,11 @@ echo 'ENV["PYTHON"]=""; Pkg.add.(["JSON",
 				' | \
 	/apps/julia-0.6/bin/julia
 
+# For PyPlot:
+#------------
+echo 'ENV["PYTHON"]=""; Pkg.build("PyCall")' | \
+/apps/julia-0.6/bin/julia
+
 echo "+++++++++++++++++++++"
 echo "Testing some PACKAGES"
 echo "+++++++++++++++++++++"
@@ -76,4 +81,3 @@ echo "++++++++++++++++++"
 echo "done Installing julia PACKAGES"
 echo "++++++++++++++++++"
 echo ""
-
