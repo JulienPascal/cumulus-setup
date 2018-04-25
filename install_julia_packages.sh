@@ -1,7 +1,8 @@
 echo "++++++++++++++++++"
-echo "done Installing julia PACKAGES"
+echo "Installing julia PACKAGES"
 echo "++++++++++++++++++"
 echo ""
+
 
 echo 'ENV["PYTHON"]=""; Pkg.add.(["JSON",
 				"FileIO",
@@ -46,6 +47,27 @@ echo 'ENV["PYTHON"]=""; Pkg.add.(["JSON",
 				Pkg.clone("https://github.com/floswald/MomentOpt.jl");
 				Pkg.clone("https://github.com/RJDennis/SmolyakApprox.jl");
 				Pkg.clone("https://github.com/mrxiaohe/RobustStats.jl")
+				' | \
+	/apps/julia-0.6/bin/julia
+
+echo "+++++++++++++++++++++"
+echo "Testing some PACKAGES"
+echo "+++++++++++++++++++++"
+echo ""
+echo 'ENV["PYTHON"]=""; Pkg.test.([
+				"Interpolations",
+				"GLM",
+				"Distributions",
+				"Optim",
+				"JLD",
+				"JSON",
+				"CompEcon",
+				"QuantEcon",
+				"ApproxFun",
+				"PyPlot",
+				"PyCall",
+				"Calculus",
+				"ForwardDiff"]);
 				' | \
 	/apps/julia-0.6/bin/julia
 

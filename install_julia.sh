@@ -7,12 +7,12 @@ echo ""
 # get julia v0.6
 echo "Downloading"
 wget https://julialang-s3.julialang.org/bin/linux/x64/0.6/julia-0.6.1-linux-x86_64.tar.gz
-echo "Creating directory"
+echo "Creating directory/apps/julia-0.6"
 mkdir -p /apps/julia-0.6
 echo "Unpacking"
 tar -xzf julia-0.6.1-linux-x86_64.tar.gz -C /apps/julia-0.6 --strip-components 1
-echo "Creating Symlink"
-ln -sf /apps/julia-0.6/bin/julia $HOME/local/bin/julia
+echo "Creating Symlink to Julia"
+ln -sf /apps/julia-0.6/bin/julia /usr/local/bin/julia
 echo "Cleaning"
 rm julia-0.6.1-linux-x86_64.tar.gz
 

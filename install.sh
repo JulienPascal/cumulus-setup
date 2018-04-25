@@ -1,7 +1,7 @@
 # ubuntu 16 install script on cumulus.parisdescartes.fr
 # copyright 2017 florian.oswald@sciencespo.fr
 
-# this script installs software 
+# this script installs software
 # it needs to be run on your master node
 
 # how to use:
@@ -68,11 +68,11 @@ echo "First will setup your ~/.bashrc"
 echo "+++++++++++++++++++++++"
 echo ""
 if [ $(id -u) -eq 0 ]; then
-    echo 'if [ -n "$BASH_VERSION" ]; then 
-        # include .bashrc if it exists 
-        if [ -f "$HOME/.bashrc" ]; then 
-            . "$HOME/.bashrc" 
-        fi 
+    echo 'if [ -n "$BASH_VERSION" ]; then
+        # include .bashrc if it exists
+        if [ -f "$HOME/.bashrc" ]; then
+            . "$HOME/.bashrc"
+        fi
         fi' >> ~/.profile
 
     # echo "PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '" >> ~/.bashrc
@@ -93,8 +93,8 @@ apt-get update
 apt-get install --yes git
 apt-get install --yes htop
 apt-get install --yes hdf5-tools
-# compilers	
-apt-get install --yes build-essential 
+# compilers
+apt-get install --yes build-essential
 apt-get install --yes gcc
 echo ""
 echo "done installing GCC"
@@ -123,7 +123,7 @@ echo ""
 # apt-get install --yes lbzip2
 # wget https://cran.rstudio.com/src/base/R-3/R-3.4.0.tar.gz
 # mkdir -p /apps/R-3.4
-# tar -xzf R-3.4.0.tar.gz 
+# tar -xzf R-3.4.0.tar.gz
 # cd R-3.4.0
 # ./configure --prefix=/apps/R-3.4 --enable-R-shlib -with-x=no
 # make && make install
@@ -179,61 +179,69 @@ echo ""
 #wget https://julialang.s3.amazonaws.com/bin/linux/x64/0.5/julia-0.5.1-linux-x86_64.tar.gz
 #mkdir -p /apps/julia-0.5
 #tar -xzf julia-0.5.1-linux-x86_64.tar.gz -C /apps/julia-0.5 --strip-components 1
-#ln -s /apps/julia-0.5/bin/julia $HOME/local/bin/julia 
+#ln -s /apps/julia-0.5/bin/julia $HOME/local/bin/julia
 #rm julia-0.5.1-linux-x86_64.tar.gz
 # get julia v0.6
 wget https://julialang-s3.julialang.org/bin/linux/x64/0.6/julia-0.6.1-linux-x86_64.tar.gz
 mkdir -p /apps/julia-0.6
 tar -xzf julia-0.6.1-linux-x86_64.tar.gz -C /apps/julia-0.6 --strip-components 1
-ln -sf /apps/julia-0.6/bin/julia $HOME/local/bin/julia 
+ln -sf /apps/julia-0.6/bin/julia $HOME/local/bin/julia
 rm julia-0.6.1-linux-x86_64.tar.gz
 
 
-echo 'ENV["PYTHON"]=""; Pkg.add.(["JSON",
-				"FileIO",
-				"DataFrames",
-				"BenchmarkTools",
-				"RData",
-				"Interpolations",
-				"Yeppp",
-				"DataFramesMeta",
-				"FreqTables",
-				"FixedSizeArrays",
-				"Plots",
-				"RCall",
-				"Logging",
-				"GLM",
-				"PDMats",
-				"Distributions",
-				"Optim",
-				"HDF5",
-				"JLD",
-				"JSON",
-				"JuMP",
-				"Ipopt",
-				"NLsolve",
-				"NLopt",
-				"ClusterManagers",
-				"PyPlot",
-				"Query",
-				"CompEcon",
-				"QuantEcon",
-				"ApproxFun",
-				"Plots",
-				"PyCall",
-				"Calculus",
-				"StatsFuns",
-				"Dierckx",
-				"DocOpt",
-				"FactCheck",
-				"ForwardDiff"]);
-				Pkg.clone("https://github.com/floswald/ApproXD.jl");
-				Pkg.clone("https://github.com/floswald/Copulas.jl");
-				Pkg.clone("https://github.com/floswald/MomentOpt.jl");
-				Pkg.clone("https://github.com/RJDennis/SmolyakApprox.jl");
-				Pkg.clone("https://github.com/mrxiaohe/RobustStats.jl")
-				' | \
-	/apps/julia-0.6/bin/julia
+# SHOULD NOT be executed as sudo:
+#--------------------------------
+# echo 'ENV["PYTHON"]=""; Pkg.add.(["JSON",
+# 				"FileIO",
+# 				"DataFrames",
+# 				"BenchmarkTools",
+# 				"RData",
+# 				"Interpolations",
+# 				"Yeppp",
+# 				"DataFramesMeta",
+# 				"FreqTables",
+# 				"FixedSizeArrays",
+# 				"Plots",
+# 				"RCall",
+# 				"Logging",
+# 				"GLM",
+# 				"PDMats",
+# 				"Distributions",
+# 				"Optim",
+# 				"HDF5",
+# 				"JLD",
+# 				"JSON",
+# 				"JuMP",
+# 				"Ipopt",
+# 				"NLsolve",
+# 				"NLopt",
+# 				"ClusterManagers",
+# 				"PyPlot",
+# 				"Query",
+# 				"CompEcon",
+# 				"QuantEcon",
+# 				"ApproxFun",
+# 				"Plots",
+# 				"PyCall",
+# 				"Calculus",
+# 				"StatsFuns",
+# 				"Dierckx",
+# 				"DocOpt",
+# 				"FactCheck",
+# 				"ForwardDiff"]);
+# 				Pkg.clone("https://github.com/floswald/ApproXD.jl");
+# 				Pkg.clone("https://github.com/floswald/Copulas.jl");
+# 				Pkg.clone("https://github.com/floswald/MomentOpt.jl");
+# 				Pkg.clone("https://github.com/RJDennis/SmolyakApprox.jl");
+# 				Pkg.clone("https://github.com/mrxiaohe/RobustStats.jl")
+# 				' | \
+# 	/apps/julia-0.6/bin/julia
+
+# For PyPlot:
+#------------
+# echo 'ENV["PYTHON"]=""; Pkg.build("PyCall")' | \
+# 	/apps/julia-0.6/bin/julia
+
 
 echo ""
 echo "done Installing julia"
@@ -244,22 +252,20 @@ sleep 3
 
 echo ""
 echo "Getting PyPlot ready"
+echo "Installing matplotlib"
 echo "+++++++++++++++++++++"
 echo ""
 
+sudo apt-get update
 sudo apt install python-pip
 export LC_ALL=C
 pip install --user matplotlib
 
-#necessary if running this script as sudo
-cd 
-sudo chown -R $USER .julia
+# necessary if running this script as sudo
+# cd
+# sudo chown -R $USER .julia
 
-
-echo 'ENV["PYTHON"]=""; Pkg.build("PyCall")' | \
-	/apps/julia-0.6/bin/julia
-
-alias julia="$HOME/local/bin/julia"
+# alias julia="$HOME/local/bin/julia"
 
 echo "Done installing!"
 echo "========================"
@@ -268,6 +274,3 @@ sleep 2
 
 echo "Now we setup the file sharing"
 echo "============================="
-
-
-
