@@ -42,7 +42,8 @@ echo 'ENV["PYTHON"]=""; Pkg.add.(["JSON",
 				"DocOpt",
 				"FactCheck",
 				"ForwardDiff",
-				"IJulia"]);
+				"IJulia",
+				"BlackBoxOptim"]);
 				' | \
 	/apps/julia-0.6/bin/julia
 
