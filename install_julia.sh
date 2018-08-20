@@ -22,6 +22,8 @@ echo "++++++++++++++++++"
 echo ""
 #-------------------------------------------
 
+cd
+sudo chown -R $USER .julia
 
 # echo "+++++++++++++++++++++"
 # echo "Getting PyPlot ready"
