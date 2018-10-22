@@ -5,22 +5,42 @@ echo ""
 # The following should be executed with sudo
 #-------------------------------------------
 # get julia v0.6
-echo "Downloading Julia 0.6.3"
-wget https://julialang-s3.julialang.org/bin/linux/x64/0.6/julia-0.6.3-linux-x86_64.tar.gz
-echo "Creating directory/apps/julia-0.6"
-mkdir -p /apps/julia-0.6
+
+# 0.6.3
+#-------
+# echo "Downloading Julia 0.6.3"
+# wget https://julialang-s3.julialang.org/bin/linux/x64/0.6/julia-0.6.3-linux-x86_64.tar.gz
+# echo "Creating directory/apps/julia-0.6"
+# mkdir -p /apps/julia-0.6
+# echo "Unpacking"
+# tar -xzf julia-0.6.3-linux-x86_64.tar.gz -C /apps/julia-0.6 --strip-components 1
+# echo "Creating Symlink to Julia"
+# ln -sf /apps/julia-0.6/bin/julia /usr/local/bin/julia
+# echo "Cleaning"
+# rm julia-0.6.3-linux-x86_64.tar.gz
+#
+# echo ""
+# echo "done Installing julia 0.6.3"
+# echo "+++++++++++++++++++++++++++"
+# echo ""
+#-------------------------------------------
+# 0.6.4
+#-------
+echo "Downloading Julia 0.6.4"
+wget https://julialang-s3.julialang.org/bin/linux/x64/0.6/julia-0.6.4-linux-x86_64.tar.gz
+echo "Creating directory/apps/julia-0.6.4"
+sudo mkdir -p /apps/julia-0.6.4
 echo "Unpacking"
-tar -xzf julia-0.6.3-linux-x86_64.tar.gz -C /apps/julia-0.6 --strip-components 1
+sudo tar -xzf julia-0.6.4-linux-x86_64.tar.gz -C /apps/julia-0.6.4 --strip-components 1
 echo "Creating Symlink to Julia"
-ln -sf /apps/julia-0.6/bin/julia /usr/local/bin/julia
+sudo ln -sf /apps/julia-0.6.4/bin/julia /usr/local/bin/julia
 echo "Cleaning"
-rm julia-0.6.3-linux-x86_64.tar.gz
+rm julia-0.6.4-linux-x86_64.tar.gz
 
 echo ""
-echo "done Installing julia"
-echo "++++++++++++++++++"
+echo "done Installing julia 0.6.4"
+echo "+++++++++++++++++++++++++++"
 echo ""
-#-------------------------------------------
 
 cd
 sudo chown -R $USER .julia
