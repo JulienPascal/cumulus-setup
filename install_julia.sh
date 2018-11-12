@@ -29,11 +29,11 @@ echo ""
 echo "Downloading Julia 0.6.4"
 wget https://julialang-s3.julialang.org/bin/linux/x64/0.6/julia-0.6.4-linux-x86_64.tar.gz
 echo "Creating directory/apps/julia-0.6.4"
-sudo mkdir -p /apps/julia-0.6.4
+mkdir -p ~/apps/julia-0.6.4
 echo "Unpacking"
-sudo tar -xzf julia-0.6.4-linux-x86_64.tar.gz -C /apps/julia-0.6.4 --strip-components 1
+tar -xzf julia-0.6.4-linux-x86_64.tar.gz -C ~/apps/julia-0.6.4 --strip-components 1
 echo "Creating Symlink to Julia"
-sudo ln -sf /apps/julia-0.6.4/bin/julia /usr/local/bin/julia
+ln -s ~/apps/julia-0.6.4/bin/julia /usr/local/bin/julia
 echo "Cleaning"
 rm julia-0.6.4-linux-x86_64.tar.gz
 
@@ -42,8 +42,6 @@ echo "done Installing julia 0.6.4"
 echo "+++++++++++++++++++++++++++"
 echo ""
 
-cd
-sudo chown -R $USER .julia
 
 # echo "+++++++++++++++++++++"
 # echo "Getting PyPlot ready"

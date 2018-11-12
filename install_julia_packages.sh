@@ -45,12 +45,12 @@ echo 'ENV["PYTHON"]=""; Pkg.add.(["JSON",
 				"IJulia",
 				"BlackBoxOptim"]);
 				' | \
-	/apps/julia-0.6/bin/julia
+	julia
 
 # For PyPlot:
 #------------
 echo 'ENV["PYTHON"]=""; Pkg.build("PyCall")' | \
-/apps/julia-0.6/bin/julia
+julia
 
 echo "+++++++++++++++++++++"
 echo "Testing some PACKAGES"
@@ -59,7 +59,7 @@ echo ""
 echo 'ENV["PYTHON"]=""; Pkg.test.([
 				"PyPlot"]);
 				' | \
-	/apps/julia-0.6/bin/julia
+	julia
 
 
 echo ""
