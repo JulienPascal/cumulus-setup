@@ -172,31 +172,60 @@ sleep 3
 
 
 
-echo ""
-echo "Getting PyPlot ready"
-echo "Installing matplotlib"
-echo "+++++++++++++++++++++"
-echo ""
-
-sudo apt-get update
-sudo apt install python-pip
-export LC_ALL=C
-sudo pip install --user matplotlib
-
-echo "Done installing!"
-echo "========================"
-
-sleep 2
-
-
-echo "============================="
-echo "Installing screen"
-echo "============================="
-apt-get install screen
-
-echo "============================="
-echo "Creating Basic structure"
-echo "============================="
-mkdir -p ~/Documents
-mkdir -p ~/Documents/REPOSITORIES
-cd ~/Documents/REPOSITORIES
+# echo ""
+# echo "Getting PyPlot ready"
+# echo "Installing matplotlib"
+# echo "+++++++++++++++++++++"
+# echo ""
+#
+# sudo apt-get update
+# sudo apt install python-pip
+# export LC_ALL=C
+# sudo pip install --user matplotlib
+#
+# echo "Done installing!"
+# echo "========================"
+#
+# sleep 2
+#
+# echo "============================="
+# echo "Now we setup the file sharing"
+# echo "MEGASync"
+# echo "============================="
+# sudo apt-get update
+# sudo apt-get install libtool libglib2.0-dev gobject-introspection libgmp3-dev nettle-dev asciidoc glib-networking openssl libcurl4-openssl-dev libssl-dev
+# cd
+# mkdir megatools
+# cd megatools
+# wget http://megatools.megous.com/builds/megatools-1.9.98.tar.gz
+# zcat megatools-1.9.98.tar.gz > megatools-1.9.98.tar
+# tar -xf megatools-1.9.98.tar
+# cd megatools-1.9.98/
+# ./configure
+# make
+# sudo make install
+#
+# echo "Creating your MegaSync configuration file"
+# echo "========================================="
+# touch ~\.megarc
+#
+# echo "Done installing MEGASync"
+# echo "You still have to configure ~\.megarc"
+# echo "Structure:"
+# echo " [Login]"
+# echo " Username = your@email"
+# echo " Passsword = yourpassword"
+# echo "======================================"
+#
+#
+# echo "============================="
+# echo "Installing screen"
+# echo "============================="
+# apt-get install screen
+#
+# echo "============================="
+# echo "Creating Basic structure"
+# echo "============================="
+# mkdir -p ~/Documents
+# mkdir -p ~/Documents/REPOSITORIES
+# cd ~/Documents/REPOSITORIES
