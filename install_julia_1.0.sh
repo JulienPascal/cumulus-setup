@@ -12,7 +12,8 @@ mkdir -p ~/apps/julia-1.0.3
 echo "Unpacking"
 tar -xzf julia-1.0.3-linux-x86_64.tar.gz -C ~/apps/julia-1.0.3 --strip-components 1
 echo "Creating Symlink to Julia"
-ln -s ~/apps/julia-1.0.3/bin/julia /usr/local/bin/julia.1.0
+#ln -s ~/apps/julia-1.0.3/bin/julia /usr/local/bin/julia.1.0
+sudo ln -s ~/apps/julia-1.0.3/bin/julia /usr/local/bin
 echo "Cleaning"
 rm julia-1.0.3-linux-x86_64.tar.gz
 

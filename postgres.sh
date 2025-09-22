@@ -1,4 +1,3 @@
-
 # install postgresql
 apt-get --yes --forces-yes install \
       build-essential \
